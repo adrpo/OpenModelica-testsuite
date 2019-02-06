@@ -1,0 +1,27 @@
+// name: Ticket5048.mos
+// keywords:
+// status: correct
+//
+// Tests that the result of getInheritedClasses and getNthInheritedClass works fine on local base classes
+//
+
+loadModel(Modelica); getErrorString();
+getInheritedClasses(Modelica.Mechanics.Translational.Components.MassWithStopAndFriction); getErrorString();
+getInheritanceCount(Modelica.Mechanics.Translational.Components.MassWithStopAndFriction); getErrorString();
+getNthInheritedClass(Modelica.Mechanics.Translational.Components.MassWithStopAndFriction, 1); getErrorString();
+getNthInheritedClass(Modelica.Mechanics.Translational.Components.MassWithStopAndFriction, 2); getErrorString();
+
+
+
+// Result:
+// true
+// ""
+// {Modelica.Mechanics.Translational.Components.MassWithStopAndFriction.PartialFrictionWithStop,Modelica.Thermal.HeatTransfer.Interfaces.PartialElementaryConditionalHeatPortWithoutT}
+// ""
+// 2
+// ""
+// Modelica.Mechanics.Translational.Components.MassWithStopAndFriction.PartialFrictionWithStop
+// ""
+// Modelica.Thermal.HeatTransfer.Interfaces.PartialElementaryConditionalHeatPortWithoutT
+// ""
+// endResult
